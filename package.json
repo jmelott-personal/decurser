@@ -1,0 +1,75 @@
+{
+  "name": "decurser",
+  "displayName": "Decurser",
+  "description": "Cursor AI extension for VS Code",
+  "version": "0.0.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmelott-personal/decurser.git"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "decurser.addQuery",
+        "title": "Add Query Button"
+      },
+      {
+        "command": "decurser.removeQuery",
+        "title": "Remove Query Button"
+      },
+      {
+        "command": "decurser.editQuery",
+        "title": "Edit Query Button"
+      },
+      {
+        "command": "decurser.openQueriesFile",
+        "title": "Edit Queries File"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "decurser-sidebar",
+          "title": "Decurser",
+          "icon": "media/decurser.svg"
+        }
+      ]
+    },
+    "views": {
+      "decurser-sidebar": [
+        {
+          "type": "webview",
+          "id": "decurser.buttons",
+          "name": "Query Buttons"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/node": "^20.11.24",
+    "@types/glob": "^8.1.0",
+    "typescript": "^5.3.3",
+    "glob": "^10.3.10",
+    "@eslint/eslintrc": "^3.0.0",
+    "@eslint/js": "^8.56.0"
+  }
+} 
