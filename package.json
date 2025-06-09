@@ -14,7 +14,9 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onView:decurser.buttons"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
@@ -58,18 +60,11 @@
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
-    "pretest": "npm run compile && npm run lint",
-    "lint": "eslint src --ext ts",
-    "test": "node ./out/test/runTest.js",
     "package": "vsce package"
   },
   "devDependencies": {
     "@types/vscode": "^1.85.0",
     "@types/node": "^20.11.24",
-    "@types/glob": "^8.1.0",
-    "typescript": "^5.3.3",
-    "glob": "^10.3.10",
-    "@eslint/eslintrc": "^3.0.0",
-    "@eslint/js": "^8.56.0"
+    "typescript": "^5.3.3"
   }
 } 
